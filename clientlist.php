@@ -4,6 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    div.dt-container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.5/css/dataTables.dataTables.css">
+
   <title>KIP | iManager</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,7 +21,7 @@
   <link rel="stylesheet" href="//cdn.datatables.net/2.1.3/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="//cdn.datatables.net/2.1.3/css/dataTables.bootstrap5.min.css">
   <link rel="stylesheet" href="//cdn.datatables.net/scroller/2.4.3/css/scroller.bootstrap5.min.css">
-  <!--<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">-->
+  
 </head>
 
 <body>
@@ -53,23 +61,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white" href="clientlist.php"><i class="fa-solid fa-users mx-3"></i>CLIENT LIST</a>
+          <a class="nav-link text-white" href="clientlist.php"><i class="fa-solid fa-users mx-3"></i>CLIENT LIST </a>
           <hr class="bg-white" style="height: 3px;">
         </li>
 
-        <!--<li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle bg-dark text-white" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <i class="fa-solid fa-users mx-3"></i> CLIENT LIST</a>
-          <hr class="bg-white" style="height: 3px;">
-          </a>
-          <ul class="dropdown-menu bg-dark">
-            <li><a class="dropdown-item bg-dark text-white" href="#">ADD CLIENT</a></li>
-            <hr class="bg-white" style="height: 3px;">
-            <li><a class="dropdown-item bg-dark text-white" href="#">UPDATE CLIENT</a></li>
-
-          </ul>
-        </li> --> 
         <li class="nav-item">
           <a class="nav-link text-white" href="#"><i class="fa-solid fa-list mx-3"></i> PRODUCT LIST</a>
           <hr class="bg-white" style="height: 3px;">
@@ -99,7 +94,7 @@
 
     </div>
     <div class="col-md-10 p-5 pt-2 mt-5">
-      <h3><i class="fa-solid fa-id-card mx-3"></i> CLIENT LIST</h3>
+      <h3><i class="fa-solid fa-users mx-3"></i> CLIENT LIST</h3>  
 
       <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" style="width: 100%"></div>
@@ -113,35 +108,52 @@
               CLIENT LIST
             </div>
             <div class="card-body">
-              <a href="profil.html" class="btn btn-md btn-success fw-bold" style="margin-bottom: 10px">ADD DATA</a>
-              <table class="table table-bordered table-striped" id="myTable">
+              <a href="iclient.php" class="btn btn-md btn-success fw-bold" style="margin-bottom: 10px">ADD DATA</a>
+              <!--<table class="table table-bordered table-striped" id="myTable"> --> 
+              <table id="example" class="display nowrap" style="width:100%">
                 <thead>
                   <tr>
                     <th scope="col">NO.</th>
-                    <th scope="col">NO INSTITUTION</th>
+                    <th scope="col">ACTION</th>
+                    <th scope="col">NO.INSTITUTION</th>
                     <th scope="col">INSTITUTION NAME</th>
                     <th scope="col">INSTITUTION ADDRESS</th>
-                    <th scope="col">CORRESPONDENCE ADDRESS</th>
-                    <th scope="col">TELPHONE</th>
+                    <th scope="col">CORESPONDENCE ADDRESS</th>
+                    <th scope="col">TELP</th>
                     <th scope="col">FAX</th>
-                    <th scope="col">PIC1 NAME</th>
-                    <th scope="col">PIC1 POSITION</th>
-                    <th scope="col">PIC1 HP</th>
-                    <th scope="col">PIC1 EMAIL</th>
-                    <th scope="col">PIC1 NATIONALITY</th>
-                    <th scope="col">PIC1 PASSPORT</th>
-                    <th scope="col">PIC1 KTP</th>
-                    <th scope="col">PIC1 RESIDENCE</th>
-                    <th scope="col">PIC2 NAME</th>
-                    <th scope="col">PIC2 POSITION</th>
-                    <th scope="col">PIC2 HP</th>
-                    <th scope="col">PIC2 EMAIL</th>
-                    <th scope="col">PIC2 NATIONALITY</th>
-                    <th scope="col">PIC2 PASSPORT</th>
-                    <th scope="col">PIC2 KTP</th>
-                    <th scope="col">PIC2 RESIDENCE</th>
-
-
+                    <th scope="col">PIC 1 NAME</th>
+                    <th scope="col">PIC 1 POSITION</th>
+                    <th scope="col">PIC 1 HP</th>
+                    <th scope="col">PIC 1 EMAIL</th>
+                    <th scope="col">PIC 1 NATIONALITY</th>
+                    <th scope="col">PIC 1 PASSPORT</th>
+                    <th scope="col">PIC 1 KTP</th>
+                    <th scope="col">PIC 1 RESIDENCE</th>
+                    <th scope="col">PIC 2 NAME</th>
+                    <th scope="col">PIC 2 POSITION</th>
+                    <th scope="col">PIC 2 HP</th>
+                    <th scope="col">PIC 2 EMAIL</th>
+                    <th scope="col">PIC 2 NATIONALITY</th>
+                    <th scope="col">PIC 2 PASSPORT</th>
+                    <th scope="col">PIC 2 KTP</th>
+                    <th scope="col">PIC 2 RESIDENCE</th>
+                    <th scope="col">REPORT EMAIL</th>
+                    <th scope="col">REPORT PRINT</th>
+                    <th scope="col">BANK 1 NAME</th>
+                    <th scope="col">BANK 1 ACCOUNT NO</th>
+                    <th scope="col">BANK 1 ACCOUNT NAME</th>
+                    <th scope="col">BANK 1 ACCOUNT CCY</th>
+                    <th scope="col">BANK 2 NAME</th>
+                    <th scope="col">BANK 2 ACCOUNT NO</th>
+                    <th scope="col">BANK 2 ACCOUNT NAME</th>
+                    <th scope="col">BANK 2 ACCOUNT CCY</th>
+                    <th scope="col">NO REKENING GCI</th>
+                    <th scope="col">NO REKENING OBF USD</th>
+                    <th scope="col">NO REKENING OBF EURO</th>
+                    <th scope="col">NO REKENING OGF</th>
+                    <th scope="col">REGISTRATION</th>
+                    <th scope="col">LAST EDIT</th>
+                    <th scope="col">LAST EDITOR</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -155,23 +167,67 @@
 
                   <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $row['id_number'] ?></td>
-                      <td><?php echo $row['nama_lengkap'] ?></td>
-                      <td><?php echo $row['alamat'] ?></td>
                       <td class="text-center">
-                        <a href="eprofil.php?id=<?php echo $row['id_number'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-                        <a href="dprofil.php?id=<?php echo $row['id_number'] ?>" class="btn btn-sm btn-danger">DELETE</a>
+                        <a href="eprofil.php?id=<?php echo $row['fid_client_list'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="dprofil.php?id=<?php echo $row['fid_client_list'] ?>" class="btn btn-sm btn-danger">DELETE</a>
                       </td>
-                  </tr>
+                      <td><?php echo $row['fclient_no'] ?></td>
+                      <td><?php echo $row['fclient_name'] ?></td>
+                      <td><?php echo $row['faddress'] ?></td>
+                      <td><?php echo $row['faddress_correspondence'] ?></td>
+                      <td><?php echo $row['ftelp'] ?></td>
+                      <td><?php echo $row['ffax'] ?></td>
+                      <td><?php echo $row['fpic1_name'] ?></td>
+                      <td><?php echo $row['fpic1_position'] ?></td>
+                      <td><?php echo $row['fpic1_hp'] ?></td>
+                      <td><?php echo $row['fpic1_email'] ?></td>
+                      <td><?php echo $row['fpic1_nationality'] ?></td>
+                      <td><?php echo $row['fpic1_passport'] ?></td>
+                      <td><?php echo $row['fpic1_ktp'] ?></td>
+                      <td><?php echo $row['fpic1_address'] ?></td>
+                      <td><?php echo $row['fpic2_name'] ?></td>
+                      <td><?php echo $row['fpic2_position'] ?></td>
+                      <td><?php echo $row['fpic2_hp'] ?></td>
+                      <td><?php echo $row['fpic2_email'] ?></td>
+                      <td><?php echo $row['fpic2_nationality'] ?></td>
+                      <td><?php echo $row['fpic2_passport'] ?></td>
+                      <td><?php echo $row['fpic2_ktp'] ?></td>
+                      <td><?php echo $row['fpic2_address'] ?></td>
+                      <td><?php echo $row['femail_report'] ?></td>
+                      <td><?php echo $row['fprint_report'] ?></td>
+                      <td><?php echo $row['fbank1_name'] ?></td>
+                      <td><?php echo $row['fbank1_account'] ?></td>
+                      <td><?php echo $row['fbank1_account_name'] ?></td>
+                      <td><?php echo $row['fbank1_account_ccy'] ?></td>
+                      <td><?php echo $row['fbank1_name'] ?></td>
+                      <td><?php echo $row['fbank2_account'] ?></td>
+                      <td><?php echo $row['fbank2_account_name'] ?></td>
+                      <td><?php echo $row['fbank2_account_ccy'] ?></td>
+                      <td><?php echo $row['fno_rek_gci'] ?></td>
+                      <td><?php echo $row['fno_rek_obf_usd'] ?></td>
+                      <td><?php echo $row['fno_rek_obf_euro'] ?></td>
+                      <td><?php echo $row['fno_rek_ogf'] ?></td>
+                      <td><?php echo $row['fregistration_time'] ?></td>
+                      <td><?php echo $row['flast_edit'] ?></td>
+                      <td><?php echo $row['flast_editor'] ?></td>
+                    </tr>
 
                 <?php } ?>
                 </tbody>
               </table>
             </div>
+            <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+            <script src="https://cdn.datatables.net/2.1.5/js/dataTables.js"></script>
+            <script>
+                new DataTable('#example', {
+                   scrollX: true,
+                  scrollY: 200
+              });    
+            </script>
+
           </div>
       </div>
     </div>
-
 
 
 
@@ -206,14 +262,6 @@
        } );
       } );
     </script>
-
-     <!--
-    <script>
-      $(document).ready( function () {
-          $('#myTable').DataTable();
-      } );
-    </script>
-    -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
